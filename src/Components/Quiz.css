@@ -1,0 +1,10 @@
+.Quiz {
+  padding: 10%;
+  background-color: white;
+}
+
+.result {
+  text-align: right;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+}

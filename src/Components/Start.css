@@ -1,0 +1,37 @@
+.Start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30%;
+}
+
+.Start > h1 {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.Start > h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.Start > button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  background: #4d5b9e;
+  border-radius: 15px;
+  width: 193px;
+  height: 52px;
+}
+
+.Start > button:active {
+  border: 6px solid black;
+}

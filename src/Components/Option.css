@@ -1,0 +1,20 @@
+.option {
+  background: #d6dbf5;
+  border-radius: 7.94239px;
+}
+
+.selected {
+  background-color: blueviolet;
+}
+
+.over.correct {
+  background-color: greenyellow;
+}
+
+.over.selected {
+  background-color: #f0afaf;
+}
+
+.over.selected.correct {
+  background-color: green;
+}

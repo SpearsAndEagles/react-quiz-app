@@ -1,0 +1,16 @@
+.qtitle {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #293264;
+}
+
+.rightWrong {
+  text-align: right;
+  font-size: medium;
+  font-family: "Inter";
+  font-weight: 500;
+}

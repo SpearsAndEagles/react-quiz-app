@@ -1,0 +1,24 @@
+body {
+  background-color: black;
+  padding: 10%;
+}
+.App {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 700px;
+  height: 700px;
+  background: #f5f7fb;
+}
+
+/* .blob1 {
+  width: 80%;
+  clip: rect(0px, 60px, 200px, 0px);
+  position: absolute;
+}
+
+.blob2 {
+  width: 100%;
+  clip: rect(0px, 60px, 200px, 0px);
+  position: absolute;
+} */
