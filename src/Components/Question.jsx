@@ -58,12 +58,16 @@ export default function Question(props) {
   return (
     <div className="question">
       <h1 className="qtitle">{props.qtitle}</h1>
-      <div className="responses">{ansElements}</div>
-      {props.isOver && (
-        <h1 className="rightWrong">
-          {ans[selected] && ans[selected].correct ? "correct" : "wrong"}
-        </h1>
-      )}
+      <div className="cont">
+        <div className={"responses" + (props.isOver ? " over" : "")}>
+          {ansElements}
+        </div>
+        {props.isOver && (
+          <h1 className="rightWrong">
+            {ans[selected] && ans[selected].correct ? "correct" : "wrong"}
+          </h1>
+        )}
+      </div>
       <hr />
     </div>
   );

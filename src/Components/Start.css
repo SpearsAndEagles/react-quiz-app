@@ -26,7 +26,13 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  background: #4d5b9e;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    33deg,
+    rgba(131, 58, 180, 1) 19%,
+    rgba(29, 135, 253, 1) 52%,
+    rgba(252, 176, 69, 1) 84%
+  );
   border-radius: 15px;
   width: 193px;
   height: 52px;

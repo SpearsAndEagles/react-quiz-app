@@ -1,6 +1,9 @@
 .Quiz {
-  padding: 10%;
   background-color: white;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .result {

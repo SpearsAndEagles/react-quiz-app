@@ -3,9 +3,21 @@
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  line-height: 19px;
 
   color: #293264;
+}
+
+.responses {
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+}
+
+.cont {
+  display: flex;
+  justify-content: space-between;
 }
 
 .rightWrong {

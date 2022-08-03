@@ -1,13 +1,19 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: black;
-  padding: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .App {
-  position: absolute;
-  top: 15%;
-  left: 15%;
   width: 700px;
   height: 700px;
+  border-radius: 10px;
+  border: 5px solid #4d5b9e;
   background: #f5f7fb;
 }
 
