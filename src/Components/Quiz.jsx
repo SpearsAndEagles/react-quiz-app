@@ -1,6 +1,6 @@
 import React from "react";
 import Question from "./Question";
-import underscore, { map } from "underscore";
+import Result from "./Result";
 import "./Quiz.css";
 
 export default function Quiz() {
@@ -62,7 +62,7 @@ export default function Quiz() {
       <button className="submit" onClick={handleCheck}>
         Check Answers
       </button>
-      {over && <h1 className="result">Result: {correct}/5</h1>}
+      {over && <Result correct={correct}/>}
     </div>
   );
 }

@@ -7,7 +7,10 @@
 }
 
 .result {
-  text-align: right;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color: wheat;
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;
 }
