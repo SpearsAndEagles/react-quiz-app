@@ -16,5 +16,16 @@
     <div id="root"></div>
     <div id="portal"></div>
     <script type="module" src="./src/main.jsx"></script>
+    <script>
+      setTimeout(() => {
+      const fun = (opacity)=>{
+          if(opacity){
+              document.querySelector("body>div:not([id])").style.cssText += `opacity:${opacity}`
+              setTimeout(fun, 50, opacity-0.01)
+          }
+      }       
+      fun(1);
+  }, 500)
+</script>
   </body>
 </html>
