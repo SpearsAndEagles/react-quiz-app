@@ -3,10 +3,11 @@ import Question from "./Question";
 import Result from "./Result";
 import "./Quiz.css";
 
-export default function Quiz({handleRestart, counter}) {
+export default function Quiz(props) {
+  const { handleRestart, counter, setCorrect, correct, over, setOver } = props;
+
   const [quiz, setQuiz] = React.useState([]);
-  const [correct, setCorrect] = React.useState(0);
-  const [over, setOver] = React.useState(false);
+  const [shouldShow, setShouldShow] = React.useState(false);
 
   function fixMarkup(str) {
     return str
@@ -38,12 +39,20 @@ export default function Quiz({handleRestart, counter}) {
     setOver(true);
   }
 
+  React.useEffect(() => {
+    if (over) {
+      setTimeout(() => setShouldShow(true), 5000);
+    } else {
+      setShouldShow(false);
+    }
+  }, [over]);
+
   function recieveCorrect(isCorrect) {
     setCorrect((prev) => prev + (isCorrect ? 1 : 0));
     console.log(correct);
   }
 
-  const quizElements = React.useMemo(() => quiz.map((question, index) => {
+  const quizElements = quiz.map((question, index) => {
     return (
       <Question
         isOver={over}
@@ -54,7 +63,7 @@ export default function Quiz({handleRestart, counter}) {
         sendCorrect={recieveCorrect}
       />
     );
-  }), [quiz]);
+  });
 
   return (
     <div className="Quiz">
@@ -62,7 +71,7 @@ export default function Quiz({handleRestart, counter}) {
       <button className="submit" onClick={handleCheck}>
         Check Answers
       </button>
-      {over && <Result correct={correct} handleRestart={handleRestart}/>}
+      {shouldShow && <Result correct={correct} handleRestart={handleRestart} />}
     </div>
   );
 }

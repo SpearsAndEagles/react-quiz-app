@@ -31,7 +31,7 @@ export default function Question(props) {
     setAns(answers);
   }, [props.counter]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (props.isOver) {
       props.sendCorrect(ans[selected] && ans[selected].correct);
     }
