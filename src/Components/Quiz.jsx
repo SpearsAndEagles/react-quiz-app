@@ -3,10 +3,11 @@ import Question from "./Question";
 import Result from "./Result";
 import "./Quiz.css";
 
-export default function Quiz() {
+export default function Quiz(props) {
+  const { handleRestart, counter, setCorrect, correct, over, setOver } = props;
+
   const [quiz, setQuiz] = React.useState([]);
-  const [correct, setCorrect] = React.useState(0);
-  const [over, setOver] = React.useState(false);
+  const [shouldShow, setShouldShow] = React.useState(false);
 
   function fixMarkup(str) {
     return str
@@ -32,11 +33,19 @@ export default function Quiz() {
         });
         setQuiz(solvedData);
       });
-  }, []);
+  }, [counter]);
 
   function handleCheck() {
     setOver(true);
   }
+
+  React.useEffect(() => {
+    if (over) {
+      setTimeout(() => setShouldShow(true), 5000);
+    } else {
+      setShouldShow(false);
+    }
+  }, [over]);
 
   function recieveCorrect(isCorrect) {
     setCorrect((prev) => prev + (isCorrect ? 1 : 0));
@@ -62,7 +71,7 @@ export default function Quiz() {
       <button className="submit" onClick={handleCheck}>
         Check Answers
       </button>
-      {over && <Result correct={correct}/>}
+      {shouldShow && <Result correct={correct} handleRestart={handleRestart} />}
     </div>
   );
 }

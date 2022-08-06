@@ -3,9 +3,15 @@
   border-radius: 7.94239px;
   font-family: "IBM Plex Mono";
   font-weight: 600;
+  box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.option:active {
+  box-shadow: none;
 }
 
 .selected {
+  box-shadow: none;
   background: linear-gradient(
     90deg,
     rgba(255, 0, 0, 1) 0%,
@@ -37,7 +43,7 @@
 }
 
 .over .correct {
-  background-color: greenyellow;
+  background: greenyellow;
 }
 
 .over .selected {
@@ -45,5 +51,5 @@
 }
 
 .over .selected.correct {
-  background-color: green;
+  background: green;
 }
