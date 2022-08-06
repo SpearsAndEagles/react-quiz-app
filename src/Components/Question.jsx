@@ -29,7 +29,7 @@ export default function Question(props) {
     }
 
     setAns(answers);
-  }, []);
+  }, [props.counter]);
 
   React.useEffect(() => {
     if (props.isOver) {

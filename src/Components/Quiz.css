@@ -1,15 +1,39 @@
 .Quiz {
-  background-color: white;
+  background-color: #f5f7fb;
   margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.result {
+.submit {
+  font-family: "IBM Plex Mono", monospace;
+  height: 5vh;
+  border-radius: 10px;
+  background: #9654ff;
+  box-shadow:  3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+.submit:active{
+  box-shadow: none;
+}
+
+.overlay {
   position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  top: 0px;
+  left:0px;
+  background-color: black;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  z-index: 6;
   color: wheat;
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;

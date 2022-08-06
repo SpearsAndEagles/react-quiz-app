@@ -3,7 +3,7 @@ import Question from "./Question";
 import Result from "./Result";
 import "./Quiz.css";
 
-export default function Quiz() {
+export default function Quiz({handleRestart, counter}) {
   const [quiz, setQuiz] = React.useState([]);
   const [correct, setCorrect] = React.useState(0);
   const [over, setOver] = React.useState(false);
@@ -32,7 +32,7 @@ export default function Quiz() {
         });
         setQuiz(solvedData);
       });
-  }, []);
+  }, [counter]);
 
   function handleCheck() {
     setOver(true);
@@ -43,7 +43,7 @@ export default function Quiz() {
     console.log(correct);
   }
 
-  const quizElements = quiz.map((question, index) => {
+  const quizElements = React.useMemo(() => quiz.map((question, index) => {
     return (
       <Question
         isOver={over}
@@ -54,7 +54,7 @@ export default function Quiz() {
         sendCorrect={recieveCorrect}
       />
     );
-  });
+  }), [quiz]);
 
   return (
     <div className="Quiz">
@@ -62,7 +62,7 @@ export default function Quiz() {
       <button className="submit" onClick={handleCheck}>
         Check Answers
       </button>
-      {over && <Result correct={correct}/>}
+      {over && <Result correct={correct} handleRestart={handleRestart}/>}
     </div>
   );
 }
